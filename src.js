@@ -3,8 +3,24 @@
  */
 
 
-function helloworld() {
-    alert("hello world!");
+//function helloworld() {
+//    alert("hello world!");
+//}
+//
+//helloworld();
+
+
+
+var arr = [];
+
+arr.push("AAA");
+arr.push("BBB");
+arr.push("CCC");
+
+var str = "";
+
+for(var index = 0; index < arr.length; index++) {
+    str = str + "/" + arr[index];
 }
 
-helloworld();
+alert(str);
