@@ -45,15 +45,22 @@ var golf = {
     color: "White",
     VIN: "123456789ABC",
     engineOn: false,
-
+    fuel: 0,
 
     showGolf: function () {
         alert(this.make + "/" + this.model + "/" + this.year);
     },
 
     start: function () {
-        this.engineOn = true;
-        alert("Engine On.")
+        if (this.fuel > 0) {
+            this.engineOn = true;
+            alert("Engine On.")
+            return true;
+        } else {
+            alert("Fuel empty, refill it.");
+            return false;
+        }
+
     },
 
     stop: function () {
@@ -63,30 +70,58 @@ var golf = {
 
     go: function () {
         if (this.engineOn) {
+            this.fuel = this.fuel - 1;
             alert("Let's go.")
         } else {
             alert("Start the engine first.");
         }
+    },
+
+    refill: function (galon) {
+        this.fuel = this.fuel + galon;
+        alert("Refill " + galon + " galons.");
     }
 
 }
 
+
+golf.horn = function () {
+    if (this.engineOn) {
+        alert("Di............");
+    }
+}
+
 //alert(golf.color);
 
+if(golf.start()) {
+    golf.horn();
+    golf.go();
+    golf.stop();
+} else {
+    golf.refill(10);
+}
 
-golf.start();
-golf.go();
-golf.stop();
 
+
+
+
+//golf.start();
+//golf.horn();
+//golf.go();
+//golf.stop();
+
+//for (var prop in golf) {
+//    console.log(prop + ": " + golf[prop]);
+//}
 
 
 //golf.doorNum = 2;
 //golf.year = true;
 //console.log(golf);
 
-function changeColor(golf) {
-    golf.color = "Black";
-}
+//function changeColor(golf) {
+//    golf.color = "Black";
+//}
 
 //changeColor(golf);
 
