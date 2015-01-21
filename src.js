@@ -10,14 +10,27 @@
 //helloworld();
 
 
+//
+//var arr = [];
+//
+//arr.push("AAA");
+//arr.push("BBB");
+//arr.push("CCC");
 
-var arr = [];
 
-arr.push("AAA");
-arr.push("BBB");
-arr.push("CCC");
 
-var str = "";
+var arr = new Array(3);
+//arr.push("XXX");
+//arr.push("YYY");
+//arr.push("ZZZ");
+arr.push("WWWW");
+arr.push("TTTT");
+arr[0] = "AAAA";
+arr[1] = "BBBB";
+arr[2] = "CCCC";
+arr[3] = "ZZZZ";
+
+var str = arr.length;
 
 for(var index = 0; index < arr.length; index++) {
     str = str + "/" + arr[index];
