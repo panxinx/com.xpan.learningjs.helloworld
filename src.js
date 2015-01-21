@@ -18,7 +18,6 @@
 //arr.push("CCC");
 
 
-
 //var arr = new Array(3);
 //arr.push("XXX");
 //arr.push("YYY");
@@ -44,14 +43,59 @@ var golf = {
     model: "GTI",
     year: "2012",
     color: "White",
-    VIN: "123456789ABC"
+    VIN: "123456789ABC",
+    engineOn: false,
+
+
+    showGolf: function () {
+        alert(this.make + "/" + this.model + "/" + this.year);
+    },
+
+    start: function () {
+        this.engineOn = true;
+        alert("Engine On.")
+    },
+
+    stop: function () {
+        this.engineOn = false;
+        alert("Engine Off");
+    },
+
+    go: function () {
+        if (this.engineOn) {
+            alert("Let's go.")
+        } else {
+            alert("Start the engine first.");
+        }
+    }
+
 }
 
 //alert(golf.color);
 
-golf.doorNum = 2;
-delete golf.year;
-alert(golf.year);
+
+golf.start();
+golf.go();
+golf.stop();
+
+
+
+//golf.doorNum = 2;
+//golf.year = true;
+//console.log(golf);
+
+function changeColor(golf) {
+    golf.color = "Black";
+}
+
+//changeColor(golf);
+
+//console.log(golf);
+
+//golf.showGolf();
+
+
+
 
 
 
