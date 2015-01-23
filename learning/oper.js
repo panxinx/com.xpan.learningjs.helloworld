@@ -35,7 +35,7 @@ function validatePhoneNumber(phoneNum) {
         return false;
     }
 
-    if(phoneNum.length != 8){
+    if (phoneNum.length != 8) {
         return false;
     }
 
@@ -44,7 +44,7 @@ function validatePhoneNumber(phoneNum) {
         return false;
     }
 
-    if(parts[0].length != 3 && parts[1].length != 4) {
+    if (parts[0].length != 3 && parts[1].length != 4) {
         return false;
     }
 
@@ -57,7 +57,7 @@ function validatePhoneNumber(phoneNum) {
 
 function showValidationResult() {
     var access = document.getElementById("telNum");
-    var phoneNum = access.getAttribute("value");
+    var phoneNum = access.value;
     if (validatePhoneNumber(phoneNum)) {
         alert("It's a valid number.");
     } else {
@@ -66,7 +66,5 @@ function showValidationResult() {
 }
 
 
-var a = 111;
-var b = typeof true;
-alert(b);
+
 
